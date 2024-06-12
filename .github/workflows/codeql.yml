@@ -44,20 +44,5 @@ jobs:
     - name: C-Programming
       run: make ./code/Makefile
 
-    - name: Run CodeQl Analysis
-      run: |
-        codeql database create .codeql-sarif
-        codeql database analyze .codeql-sarif --format=sarif-latest > codeql_results.sarif
-    
-    - name: Save SARIF file
-      run: |
-        mv codeql_results.sarif $GITHUB_WORKSPACE/codeql_results.sarif
-    
-    - name: Upload SARIF file
-      uses: actions/upload-artifact@v2
-      with:
-        name: codeql-results
-        path: $GITHUB_WORKSPACE/codeql_results.sarif
-        
     - name: Analyze
       uses: github/codeql-action/analyze@v3
