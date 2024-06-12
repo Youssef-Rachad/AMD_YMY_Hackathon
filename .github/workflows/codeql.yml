@@ -66,3 +66,4 @@ jobs:
         git add .
         git commit -m "Add your commit message here"
         git push https://${{ secrets.GITHUB_USERNAME }}:${{ secrets.ACCESS_TOKEN }}@github.com/Youssef-Rachad/AMD_YMY_Hackathon.git
+        python --version
