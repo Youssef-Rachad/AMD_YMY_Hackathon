@@ -59,3 +59,8 @@ jobs:
         current_date=$(date +"%Y-%m-%d")
         mkdir -p "$GITHUB_WORKSPACE/$current_date"
         cp $HOME/work/AMD_YMY_Hackathon/results/python.sarif $GITHUB_WORKSPACE/$current_date/python.sarif
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Add your commit message here"
+        git push
