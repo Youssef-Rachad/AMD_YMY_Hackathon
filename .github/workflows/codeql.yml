@@ -13,12 +13,14 @@ jobs:
     name: Analyze
     runs-on: ubuntu-latest
 
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
     strategy:
       fail-fast: false
-      permissions:
-        actions: read
-        contents: read
-        security-events: write
+    
       matrix:
         include:
           - language: c-cpp
