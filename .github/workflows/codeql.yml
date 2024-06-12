@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      actions: read
-      contents: read
+      actions: write
+      contents: write
       security-events: write
 
     strategy:
@@ -59,6 +59,8 @@ jobs:
         current_date=$(date +"%Y-%m-%d")
         mkdir -p "$GITHUB_WORKSPACE/$current_date"
         cp $HOME/work/AMD_YMY_Hackathon/results/python.sarif $GITHUB_WORKSPACE/$current_date/python.sarif
+        echo "=====boi======"
+        ls $GITHUB_WORKSPACE/$current_date
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
