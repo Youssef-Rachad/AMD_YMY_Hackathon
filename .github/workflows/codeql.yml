@@ -36,7 +36,7 @@ jobs:
         config-file: ./.github/codeql-config.yml
 
     - name:
-      run: make
+      run: make ./code/Makefile
 
     - name: Analyze
       uses: github/codeql-action/analyze@v3
