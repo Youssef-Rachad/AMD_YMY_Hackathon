@@ -63,4 +63,4 @@ jobs:
         git config --local user.name "GitHub Action"
         git add .
         git commit -m "Add your commit message here"
-        git push
+        git push https://${{ secrets.GITHUB_USERNAME }}:${{ secrets.ACCESS_TOKEN }}@github.com/Youssef-Rachad/AMD_YMY_Hackathon.git
