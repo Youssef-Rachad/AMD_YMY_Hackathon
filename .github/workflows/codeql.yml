@@ -21,7 +21,7 @@ jobs:
           build-mode: autobuild
 
           -language: python
-          -build-mode: none
+          build-mode: none
 
 
     steps:
