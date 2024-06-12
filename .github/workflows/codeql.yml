@@ -46,3 +46,8 @@ jobs:
 
     - name: Analyze
       uses: github/codeql-action/analyze@v3
+
+    - name: Print
+      run: |
+        ls
+        ls $GITHUB_WORKSPACE
