@@ -45,22 +45,13 @@ jobs:
       run: make ./code/Makefile
 
     - name: Analyze
+      id: analysis
       uses: github/codeql-action/analyze@v3
       with:
         cleanup-level: none
-  post:
-    name: Post to GitHub Pages
-    runs-on: ubuntu-latest
-
-    permissions:
-      actions: write
-      contents: write
-      security-events: write
-
-    strategy:
-      fail-fast: false
-    needs: analyze
-    steps:
+    - name: Check on failures
+      if: steps.analysis.outcome != 'success' || steps.analysis.outcome != 'success'
+      run: exit 1
     - name: Print
       run: |
         #ls
