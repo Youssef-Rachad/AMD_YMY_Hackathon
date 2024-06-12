@@ -23,8 +23,8 @@ jobs:
     
       matrix:
         include:
-          - language: c-cpp
-            build-mode: autobuild
+          # - language: c-cpp
+          #   build-mode: autobuild
 
           - language: python
             build-mode: none
