@@ -48,7 +48,19 @@ jobs:
       uses: github/codeql-action/analyze@v3
     #  with:
     #    cleanup-level: none
+  post:
+    name: Post to GitHub Pages
+    runs-on: ubuntu-latest
 
+    permissions:
+      actions: write
+      contents: write
+      security-events: write
+
+    strategy:
+      fail-fast: false
+    needs: analyze
+    steps:
     - name: Print
       run: |
         #ls
@@ -61,6 +73,8 @@ jobs:
         cp $HOME/work/AMD_YMY_Hackathon/results/python.sarif $GITHUB_WORKSPACE/SARIF_DEPOT/$current_date_python.sarif
         #echo "=====boi======"
         #ls $GITHUB_WORKSPACE/SARIF_DEPOT
+        current_date=$(date +"%Y-%m-%d")
+        echo "# We made a new codeqlcheck" >> $GITHUB_WORKSPACE/website/_posts/$current_date-results.md
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
