@@ -2,7 +2,7 @@ import requests
 import json
 
 # Fetch the SARIF file
-url = "https://api.github.com/repos/{owner}/{repo}/code-scanning/alerts"
+url = "https://api.github.com/repos/Youssef-Rachad/AMD_YMY_Hackathon/security/code-scanning/alerts"
 headers = {"Accept": "application/vnd.github.v3+json"}
 response = requests.get(url, headers=headers)
 sarif_file = response.json()
