@@ -56,3 +56,6 @@ jobs:
         pwd
         echo $HOME
         cat $HOME/work/AMD_YMY_Hackathon/results/python.sarif
+        current_date=$(date +"%Y-%m-%d")
+        mkdir -p "$GITHUB_WORKSPACE/$current_date"
+        cp $HOME/work/AMD_YMY_Hackathon/results/python.sarif $GITHUB_WORKSPACE/$current_date/python.sarif
