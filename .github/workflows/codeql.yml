@@ -55,12 +55,12 @@ jobs:
     - name: Print
       run: |
         #ls
-        #ls $GITHUB_WORKSPACE
+        ls $GITHUB_WORKSPACE
         #pwd
         #echo $HOME
         #cat $HOME/work/AMD_YMY_Hackathon/results/python.sarif
         current_date=$(date +"%Y-%m-%d-%H")
-        mkdir -p "$GITHUB_WORKSPACE/SARIF_DEPOT/$current_date"
+        #mkdir -p "$GITHUB_WORKSPACE/SARIF_DEPOT/$current_date"
         cp $HOME/work/AMD_YMY_Hackathon/results/python.sarif $GITHUB_WORKSPACE/SARIF_DEPOT/$current_date_python.sarif
         #echo "=====boi======"
         #ls $GITHUB_WORKSPACE/SARIF_DEPOT
