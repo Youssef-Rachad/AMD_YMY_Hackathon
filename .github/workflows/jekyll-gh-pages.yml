@@ -26,6 +26,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for CodeQL
+        uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'Analyze' # Must align with codeql yml job name
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 20
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
