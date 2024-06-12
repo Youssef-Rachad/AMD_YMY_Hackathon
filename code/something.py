@@ -1,7 +1,8 @@
 import os
 
+pass = os.getenv("pass")
 
-pass =  os.getenv("Password")
+
 
 print(pass)
 
