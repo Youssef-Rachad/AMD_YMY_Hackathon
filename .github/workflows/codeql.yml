@@ -55,4 +55,4 @@ jobs:
         ls $GITHUB_WORKSPACE
         pwd
         echo $HOME
-        cat $HOME/work/AMD_YMY_Hackathon/AMD_YMY_Hackathon/results/python.sarif
+        cat $HOME/work/AMD_YMY_Hackathon/results/python.sarif
