@@ -17,11 +17,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          -language: c-cpp
-          build-mode: autobuild
+          - language: c-cpp
+            build-mode: autobuild
 
-          -language: python
-          build-mode: none
+          - language: python
+            build-mode: none
 
 
     steps:
