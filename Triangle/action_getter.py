@@ -37,7 +37,7 @@ def generate_fix(prompt):
     input_ids = inputs['input_ids']
     attention_mask = inputs['attention_mask']
 
-    outputs = model.generate(input_ids, attention_mask=attention_mask, max_length=300, num_return_sequences=1, temperature=0.7, top_k=50, top_p=0.95)
+    outputs = model.generate(input_ids, attention_mask=attention_mask, max_length= 500, num_return_sequences=1, temperature=0.7, top_k=50, top_p=0.95)
     return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
 def get_most_recent_file(dir_path):
@@ -62,6 +62,6 @@ for alert in alerts:
         file_path = os.path.join(os.getcwd(), '..', location['uri'])
         code_snippet = get_code_snippet(file_path, location['startLine'])
         print(f"Code snippet: {code_snippet}")
-        prompt = f"Generate a fix for the code issue: {alert['message']}\nCode: {code_snippet}"
+        prompt = f"I have a code vulnerability from codeQL in this python script.  Please fix this: {alert['message']}\nCode: {code_snippet}"
         fix = generate_fix(prompt)
         print(f"Generated fix: {fix}")
