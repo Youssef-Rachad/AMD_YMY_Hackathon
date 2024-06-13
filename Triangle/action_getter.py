@@ -9,11 +9,13 @@ date = datetime.datetime.now()
 dir_path = os.path.join(os.getcwd(), '../SARIF_DEPOT')
 
 def writer():
-    
-    # with open(os.path.join(os.getcwd(), "../website", "_posts", f"{str(date)[:10]}__results.md"), "w") as f:
 
+    result = {"result": json.dumps(global_results)}
+    
+    with open(os.path.join(os.getcwd(), "../website", "_posts", f"{str(date)[:10]}__results.md"), "w") as f:
+        f.write(result)
     with open(os.path.join(os.getcwd(), "../website",  "index.md"), "w") as f:
-        f.write(str(global_results))
+        f.write(result)
         # f.write(f"[https://youssef-rachad.github.io/AMD_YMY_Hackathon/{str(date)[:10]}__results]")
 
 
@@ -117,7 +119,7 @@ for alert in alerts:
         prompt = f"Generate a fix for the code issue: {alert['message']}\nCode: {code_snippet}"
         fix = generate_code_snippet(prompt)
 
-        global_results.append({code_snippet, fix})
+        global_results.append({"code_snippet":code_snippet, "fix":fix})
         print(f"Generated fix: {fix}")
 
 
