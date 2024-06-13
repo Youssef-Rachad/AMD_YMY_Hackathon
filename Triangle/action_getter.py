@@ -2,6 +2,22 @@ import json
 import os
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 import requests
+import datetime
+
+global_results = []
+date = datetime.datetime.now()
+dir_path = os.path.join(os.getcwd(), '../SARIF_DEPOT')
+
+with open(os.path.join(os.getcwd(), "../website", "_posts", f"{str(date)[:11]}.md"), "w") as f:
+    f.write("hi")
+print(date)
+
+def writer():
+    
+    with open(os.path.join(os.getcwd(), "../website", "_posts", f"{str(date)[:11]}__results.md"), "w") as f:
+        f.write(str(global_results))
+
+
 
 def generate_code_snippet(prompt):
     auth = os.getenv("AUTH_TOKEN")
@@ -72,7 +88,7 @@ def get_code_snippet(file_path, start_line):
             line_string = line_string + element
     return line_string + f".    Error at line {start_line}"
 
-dir_path = os.path.join(os.getcwd(), '../SARIF_DEPOT')
+
 most_recent_file = get_most_recent_file(dir_path)
 alerts = parse_sarif(most_recent_file)
 for alert in alerts:
@@ -101,4 +117,9 @@ for alert in alerts:
         # print(prompt)
         prompt = f"Generate a fix for the code issue: {alert['message']}\nCode: {code_snippet}"
         fix = generate_code_snippet(prompt)
+
+        global_results.append({code_snippet, fix})
         print(f"Generated fix: {fix}")
+
+
+writer()
