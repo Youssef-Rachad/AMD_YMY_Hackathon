@@ -4685,9 +4685,9 @@
         "locations" : [ {
           "physicalLocation" : {
             "artifactLocation" : {
-              "uri" : "code/sql-injection-flask.py",
+              "uri" : "code/something.py",
               "uriBaseId" : "%SRCROOT%",
-              "index" : 4
+              "index" : 2
             }
           }
         } ],
@@ -4711,9 +4711,9 @@
         "locations" : [ {
           "physicalLocation" : {
             "artifactLocation" : {
-              "uri" : "code/something.py",
+              "uri" : "code/sql-injection-flask.py",
               "uriBaseId" : "%SRCROOT%",
-              "index" : 2
+              "index" : 4
             }
           }
         } ],
