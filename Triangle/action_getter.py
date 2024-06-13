@@ -37,8 +37,7 @@ def generate_fix(prompt):
     input_ids = inputs['input_ids']
     attention_mask = inputs['attention_mask']
 
-    outputs = model.generate(input_ids, attention_mask=attention_mask, max_length=300, num_return_sequences=1, temperature=0.7)
-
+    outputs = model.generate(input_ids, attention_mask=attention_mask, max_length=300, num_return_sequences=1, temperature=0.7, top_k=50, top_p=0.95)
     return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
 def get_most_recent_file(dir_path):
@@ -49,7 +48,10 @@ def get_most_recent_file(dir_path):
 def get_code_snippet(file_path, start_line):
     with open(file_path, 'r') as file:
         lines = file.readlines()
-    return lines[start_line - 1] if start_line <= len(lines) else ''
+        line_string = ""
+        for element in lines:
+            line_string = line_string + element
+    return line_string + f".    Error at line {start_line}"
 
 dir_path = os.path.join(os.getcwd(), '../SARIF_DEPOT')
 most_recent_file = get_most_recent_file(dir_path)
