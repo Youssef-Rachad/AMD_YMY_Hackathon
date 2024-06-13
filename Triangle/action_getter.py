@@ -1,6 +1,25 @@
 import json
 import os
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
+import requests
+
+def generate_code_snippet(prompt):
+    auth = os.getenv("AUTH_TOKEN")
+    payload = {
+        "history": [],
+        "user_prompt": prompt,
+        "plugins": [],
+        "index_names": [],
+        "is_doc_summary": False,
+        "doc_assist_file_name": "null",
+        "file_name": "",
+        "jira_oauth2": "null"
+    }
+    res = requests.post("https://nabu.amd.com/KB/ask_kb?&kb=AMD%20Private%20ChatGPT&model_name=gpt-4-32k", headers={
+        "Authorization": auth,
+        "Content-Type": "application/json"
+    }, data=json.dumps(payload)) 
+    return res.text
 
 def parse_sarif(file_path):
     with open(file_path, 'r') as file:
@@ -37,8 +56,7 @@ def generate_fix(prompt):
     input_ids = inputs['input_ids']
     attention_mask = inputs['attention_mask']
 
-    outputs = model.generate(input_ids, attention_mask=attention_mask, max_length=300, num_return_sequences=1, temperature=0.3)
-
+    outputs = model.generate(input_ids, attention_mask=attention_mask, max_length= 500, num_return_sequences=1, temperature=0.7, top_k=50, top_p=0.95)
     return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
 def get_most_recent_file(dir_path):
@@ -49,7 +67,10 @@ def get_most_recent_file(dir_path):
 def get_code_snippet(file_path, start_line):
     with open(file_path, 'r') as file:
         lines = file.readlines()
-    return lines[start_line - 1] if start_line <= len(lines) else ''
+        line_string = ""
+        for element in lines:
+            line_string = line_string + element
+    return line_string + f".    Error at line {start_line}"
 
 dir_path = os.path.join(os.getcwd(), '../SARIF_DEPOT')
 most_recent_file = get_most_recent_file(dir_path)
@@ -63,10 +84,6 @@ for alert in alerts:
 
 
         language, issue_type = alert['ruleId'].split("/")
-        
-
-
-
 
         prompt = f"""
                 Hey, I have a "{issue_type}" vulnerability in this python script:
@@ -83,5 +100,5 @@ for alert in alerts:
 
         # print(prompt)
         prompt = f"Generate a fix for the code issue: {alert['message']}\nCode: {code_snippet}"
-        fix = generate_fix(prompt)
+        fix = generate_code_snippet(prompt)
         print(f"Generated fix: {fix}")

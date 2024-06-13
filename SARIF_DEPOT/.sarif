@@ -4633,6 +4633,32 @@
         "locations" : [ {
           "physicalLocation" : {
             "artifactLocation" : {
+              "uri" : "code/testing.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 5
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/diagnostics/successfully-extracted-files",
+          "index" : 1,
+          "toolComponent" : {
+            "index" : 0
+          }
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
               "uri" : "code/sql-injection.py",
               "uriBaseId" : "%SRCROOT%",
               "index" : 0
@@ -4711,9 +4737,9 @@
         "locations" : [ {
           "physicalLocation" : {
             "artifactLocation" : {
-              "uri" : "code/testing.py",
+              "uri" : "code/command-injection.py",
               "uriBaseId" : "%SRCROOT%",
-              "index" : 5
+              "index" : 1
             }
           }
         } ],
@@ -4740,32 +4766,6 @@
               "uri" : "code/code-injection.py",
               "uriBaseId" : "%SRCROOT%",
               "index" : 3
-            }
-          }
-        } ],
-        "message" : {
-          "text" : ""
-        },
-        "level" : "none",
-        "descriptor" : {
-          "id" : "py/diagnostics/successfully-extracted-files",
-          "index" : 1,
-          "toolComponent" : {
-            "index" : 0
-          }
-        },
-        "properties" : {
-          "formattedMessage" : {
-            "text" : ""
-          }
-        }
-      }, {
-        "locations" : [ {
-          "physicalLocation" : {
-            "artifactLocation" : {
-              "uri" : "code/command-injection.py",
-              "uriBaseId" : "%SRCROOT%",
-              "index" : 1
             }
           }
         } ],
