@@ -37,7 +37,7 @@ def generate_fix(prompt):
     input_ids = inputs['input_ids']
     attention_mask = inputs['attention_mask']
 
-    outputs = model.generate(input_ids, attention_mask=attention_mask, max_length=300, num_return_sequences=1, temperature=0.7)
+    outputs = model.generate(input_ids, attention_mask=attention_mask, max_length=300, num_return_sequences=1, temperature=0.3)
 
     return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
@@ -59,7 +59,29 @@ for alert in alerts:
     for location in alert['locations']:
         file_path = os.path.join(os.getcwd(), '..', location['uri'])
         code_snippet = get_code_snippet(file_path, location['startLine'])
-        print(f"Code snippet: {code_snippet}")
+        # print(f"Code snippet: {code_snippet}")
+
+
+        language, issue_type = alert['ruleId'].split("/")
+        
+
+
+
+
+        prompt = f"""
+                Hey, I have a "{issue_type}" vulnerability in this python script:
+
+                ```
+                {code_snippet}
+                ```
+
+                Here's a description of the issue: "{alert['message']}"
+
+
+                Pleas provided 3 solutions to fix this code delimited by "##########".
+                """
+
+        # print(prompt)
         prompt = f"Generate a fix for the code issue: {alert['message']}\nCode: {code_snippet}"
         fix = generate_fix(prompt)
         print(f"Generated fix: {fix}")
