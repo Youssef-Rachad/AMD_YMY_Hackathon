@@ -4633,9 +4633,9 @@
         "locations" : [ {
           "physicalLocation" : {
             "artifactLocation" : {
-              "uri" : "code/testing.py",
+              "uri" : "code/something.py",
               "uriBaseId" : "%SRCROOT%",
-              "index" : 5
+              "index" : 2
             }
           }
         } ],
@@ -4659,9 +4659,9 @@
         "locations" : [ {
           "physicalLocation" : {
             "artifactLocation" : {
-              "uri" : "code/something.py",
+              "uri" : "code/sql-injection.py",
               "uriBaseId" : "%SRCROOT%",
-              "index" : 2
+              "index" : 0
             }
           }
         } ],
@@ -4711,9 +4711,9 @@
         "locations" : [ {
           "physicalLocation" : {
             "artifactLocation" : {
-              "uri" : "code/sql-injection.py",
+              "uri" : "code/testing.py",
               "uriBaseId" : "%SRCROOT%",
-              "index" : 0
+              "index" : 5
             }
           }
         } ],
