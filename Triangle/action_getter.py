@@ -10,8 +10,11 @@ dir_path = os.path.join(os.getcwd(), '../SARIF_DEPOT')
 
 def writer():
     
-    with open(os.path.join(os.getcwd(), "../website", "_posts", f"{str(date)[:10]}__results.md"), "w") as f:
+    # with open(os.path.join(os.getcwd(), "../website", "_posts", f"{str(date)[:10]}__results.md"), "w") as f:
+
+    with open(os.path.join(os.getcwd(), "../website",  "index.md"), "w") as f:
         f.write(str(global_results))
+        # f.write(f"[https://youssef-rachad.github.io/AMD_YMY_Hackathon/{str(date)[:10]}__results]")
 
 
 
