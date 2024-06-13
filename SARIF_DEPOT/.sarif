@@ -4633,9 +4633,9 @@
         "locations" : [ {
           "physicalLocation" : {
             "artifactLocation" : {
-              "uri" : "code/sql-injection.py",
+              "uri" : "code/testing.py",
               "uriBaseId" : "%SRCROOT%",
-              "index" : 0
+              "index" : 5
             }
           }
         } ],
@@ -4659,9 +4659,9 @@
         "locations" : [ {
           "physicalLocation" : {
             "artifactLocation" : {
-              "uri" : "code/sql-injection-flask.py",
+              "uri" : "code/sql-injection.py",
               "uriBaseId" : "%SRCROOT%",
-              "index" : 4
+              "index" : 0
             }
           }
         } ],
@@ -4711,35 +4711,9 @@
         "locations" : [ {
           "physicalLocation" : {
             "artifactLocation" : {
-              "uri" : "code/testing.py",
+              "uri" : "code/sql-injection-flask.py",
               "uriBaseId" : "%SRCROOT%",
-              "index" : 5
-            }
-          }
-        } ],
-        "message" : {
-          "text" : ""
-        },
-        "level" : "none",
-        "descriptor" : {
-          "id" : "py/diagnostics/successfully-extracted-files",
-          "index" : 1,
-          "toolComponent" : {
-            "index" : 0
-          }
-        },
-        "properties" : {
-          "formattedMessage" : {
-            "text" : ""
-          }
-        }
-      }, {
-        "locations" : [ {
-          "physicalLocation" : {
-            "artifactLocation" : {
-              "uri" : "code/code-injection.py",
-              "uriBaseId" : "%SRCROOT%",
-              "index" : 3
+              "index" : 4
             }
           }
         } ],
@@ -4789,9 +4763,9 @@
         "locations" : [ {
           "physicalLocation" : {
             "artifactLocation" : {
-              "uri" : ".github/workflows/codeql.yml",
+              "uri" : "code/code-injection.py",
               "uriBaseId" : "%SRCROOT%",
-              "index" : 6
+              "index" : 3
             }
           }
         } ],
@@ -4817,7 +4791,59 @@
             "artifactLocation" : {
               "uri" : ".github/codeql-config.yml",
               "uriBaseId" : "%SRCROOT%",
+              "index" : 6
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/diagnostics/successfully-extracted-files",
+          "index" : 1,
+          "toolComponent" : {
+            "index" : 0
+          }
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : ".github/workflows/codeql.yml",
+              "uriBaseId" : "%SRCROOT%",
               "index" : 7
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/diagnostics/successfully-extracted-files",
+          "index" : 1,
+          "toolComponent" : {
+            "index" : 0
+          }
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : ".github/workflows/jekyll-gh-pages.yml",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 8
             }
           }
         } ],
@@ -4981,7 +5007,7 @@
             "artifactLocation" : {
               "uri" : "code/main.c",
               "uriBaseId" : "%SRCROOT%",
-              "index" : 8
+              "index" : 9
             }
           }
         } ],
@@ -5039,21 +5065,27 @@
       }
     }, {
       "location" : {
-        "uri" : ".github/workflows/codeql.yml",
+        "uri" : ".github/codeql-config.yml",
         "uriBaseId" : "%SRCROOT%",
         "index" : 6
       }
     }, {
       "location" : {
-        "uri" : ".github/codeql-config.yml",
+        "uri" : ".github/workflows/codeql.yml",
         "uriBaseId" : "%SRCROOT%",
         "index" : 7
       }
     }, {
       "location" : {
-        "uri" : "code/main.c",
+        "uri" : ".github/workflows/jekyll-gh-pages.yml",
         "uriBaseId" : "%SRCROOT%",
         "index" : 8
+      }
+    }, {
+      "location" : {
+        "uri" : "code/main.c",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 9
       }
     } ],
     "results" : [ {

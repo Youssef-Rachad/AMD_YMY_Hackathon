@@ -1,0 +1,6 @@
+website/.vscode/*
+website/_site
+website/.sass-cache
+website/Gemfile.lock
+website/*.gem
+website/.jekyll-cache

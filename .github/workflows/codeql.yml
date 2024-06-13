@@ -45,22 +45,27 @@ jobs:
       run: make ./code/Makefile
 
     - name: Analyze
+      id: analysis
       uses: github/codeql-action/analyze@v3
-    #  with:
-    #    cleanup-level: none
-
+      with:
+        cleanup-level: none
+    - name: Check on failures
+      if: steps.analysis.outcome != 'success' || steps.analysis.outcome != 'success'
+      run: exit 1
     - name: Print
       run: |
         #ls
-        #ls $GITHUB_WORKSPACE
+        ls $GITHUB_WORKSPACE
         #pwd
         #echo $HOME
         #cat $HOME/work/AMD_YMY_Hackathon/results/python.sarif
         current_date=$(date +"%Y-%m-%d-%H")
-        mkdir -p "$GITHUB_WORKSPACE/SARIF_DEPOT/$current_date"
+        #mkdir -p "$GITHUB_WORKSPACE/SARIF_DEPOT/$current_date"
         cp $HOME/work/AMD_YMY_Hackathon/results/python.sarif $GITHUB_WORKSPACE/SARIF_DEPOT/$current_date_python.sarif
         #echo "=====boi======"
         #ls $GITHUB_WORKSPACE/SARIF_DEPOT
+        current_date=$(date +"%Y-%m-%d")
+        echo "# We made a new codeqlcheck" >> $GITHUB_WORKSPACE/website/_posts/$current_date-results.md
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
