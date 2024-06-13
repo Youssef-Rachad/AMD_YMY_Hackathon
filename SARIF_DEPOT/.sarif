@@ -4633,32 +4633,6 @@
         "locations" : [ {
           "physicalLocation" : {
             "artifactLocation" : {
-              "uri" : "code/sql-injection.py",
-              "uriBaseId" : "%SRCROOT%",
-              "index" : 0
-            }
-          }
-        } ],
-        "message" : {
-          "text" : ""
-        },
-        "level" : "none",
-        "descriptor" : {
-          "id" : "py/diagnostics/successfully-extracted-files",
-          "index" : 1,
-          "toolComponent" : {
-            "index" : 0
-          }
-        },
-        "properties" : {
-          "formattedMessage" : {
-            "text" : ""
-          }
-        }
-      }, {
-        "locations" : [ {
-          "physicalLocation" : {
-            "artifactLocation" : {
               "uri" : "code/testing.py",
               "uriBaseId" : "%SRCROOT%",
               "index" : 5
@@ -4685,9 +4659,9 @@
         "locations" : [ {
           "physicalLocation" : {
             "artifactLocation" : {
-              "uri" : "code/something.py",
+              "uri" : "code/sql-injection.py",
               "uriBaseId" : "%SRCROOT%",
-              "index" : 2
+              "index" : 0
             }
           }
         } ],
@@ -4714,6 +4688,32 @@
               "uri" : "code/sql-injection-flask.py",
               "uriBaseId" : "%SRCROOT%",
               "index" : 4
+            }
+          }
+        } ],
+        "message" : {
+          "text" : ""
+        },
+        "level" : "none",
+        "descriptor" : {
+          "id" : "py/diagnostics/successfully-extracted-files",
+          "index" : 1,
+          "toolComponent" : {
+            "index" : 0
+          }
+        },
+        "properties" : {
+          "formattedMessage" : {
+            "text" : ""
+          }
+        }
+      }, {
+        "locations" : [ {
+          "physicalLocation" : {
+            "artifactLocation" : {
+              "uri" : "code/something.py",
+              "uriBaseId" : "%SRCROOT%",
+              "index" : 2
             }
           }
         } ],
