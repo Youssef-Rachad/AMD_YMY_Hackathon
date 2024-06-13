@@ -8,13 +8,9 @@ global_results = []
 date = datetime.datetime.now()
 dir_path = os.path.join(os.getcwd(), '../SARIF_DEPOT')
 
-with open(os.path.join(os.getcwd(), "../website", "_posts", f"{str(date)[:11]}.md"), "w") as f:
-    f.write("hi")
-print(date)
-
 def writer():
     
-    with open(os.path.join(os.getcwd(), "../website", "_posts", f"{str(date)[:11]}__results.md"), "w") as f:
+    with open(os.path.join(os.getcwd(), "../website", "_posts", f"{str(date)[:10]}__results.md"), "w") as f:
         f.write(str(global_results))
 
 
